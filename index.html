@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تنزيل</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+    }
+
+    .step { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    .hidden { display: none; }
+
+    .btn {
+      padding: 14px 42px;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.1s, background 0.2s;
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-main {
+      background: #2563eb;
+      color: #fff;
+    }
+    .btn-main:hover { background: #1d4ed8; }
+
+    .btn-dl {
+      background: #16a34a;
+      color: #fff;
+    }
+    .btn-dl:hover { background: #15803d; }
+
+    .thanks {
+      font-size: 18px;
+      line-height: 1.9;
+      color: #1e293b;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .thanks strong {
+      color: #15803d;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- الخطوة الأولى: زر تنزيل فقط -->
+    <div class="step" id="step1">
+      <button class="btn btn-main" onclick="showThanks()">⬇ تنزيل</button>
+    </div>
+
+    <!-- الخطوة الثانية: رسالة الشكر + زر تنزيل الملف -->
+    <div class="step hidden" id="step2">
+      <div class="thanks">
+        شكراً للملك<br>
+        <strong>أحمد مدحت</strong><br>
+        على تعبه ومجهوده في عمل الأكواد 🙏
+      </div>
+      <a href="cc.zip" download="cc.zip">
+        <button class="btn btn-dl">⬇ تنزيل الملف</button>
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    function showThanks() {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
